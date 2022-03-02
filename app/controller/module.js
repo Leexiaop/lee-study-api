@@ -2,10 +2,10 @@
 
 const Controller = require('egg').Controller;
 
-class AnswerController extends Controller {
+class ModuleController extends Controller {
 	async index() {
 		const {ctx, service} = this;
-		const data = await service.answer.get(ctx.query.questionId);
+		const data = await service.module.getList();
 		ctx.body = {
 			code: 10000,
 			msg: '请求成功',
@@ -14,4 +14,4 @@ class AnswerController extends Controller {
 	}
 }
 
-module.exports = AnswerController;
+module.exports = ModuleController;
